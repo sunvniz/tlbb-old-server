@@ -116,7 +116,7 @@ function x334908_OnActivateOnce( sceneId, selfId )
 	for i = 0, 99 do
 		nGrowLevel = ReturnToPerfectChild(sceneId, selfId, petGUID_H, petGUID_L)
 		
-		if (i == 0)
+		if (i == 0) then
 			nCostMoneyJZ = nMoneyJZ - GetMoneyJZ(sceneId,selfId)
 			nCostMoneyJB = nMoneyJB - GetMoney(sceneId,selfId)
 		end
