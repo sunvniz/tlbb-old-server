@@ -1,0 +1,4 @@
+# Keep these files exactly as they are (Binary mode)
+*.lua binary
+*.txt binary
+*.ini binary

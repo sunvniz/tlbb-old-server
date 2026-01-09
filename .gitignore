@@ -9,3 +9,4 @@
 
 # 3. Optional: Ensure the .gitignore itself is tracked
 !.gitignore
+!.gitattributes

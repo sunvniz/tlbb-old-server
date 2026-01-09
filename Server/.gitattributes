@@ -1,0 +1,16 @@
+# Auto detect text files and perform LF normalization
+
+*.so binary
+*.6 binary
+
+./Login binary
+./Server binary filter=lfs diff=lfs merge=lfs
+./smtool binary
+./ShareMemory binary
+./World binary
+
+./Billing text eof=lf
+./run text eof=lf
+./shm text eof=lf
+./stop text eof=lf
+*.sh text eof=lf
