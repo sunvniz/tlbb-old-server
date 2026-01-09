@@ -108,70 +108,41 @@ function x334908_OnActivateOnce( sceneId, selfId )
 	petGUID_L = LuaFnGetLowSectionOfTargetPetGuid( sceneId, selfId )
 
 	local nGrowLevel = 0
-	
-	local nMoneyJZ = GetMoneyJZ(sceneId,selfId)
-	local nMoneyJB = GetMoney(sceneId,selfId)
-	local nCostMoneyJZ = 0
-	local nCostMoneyJB = 0
+
 	for i = 0, 99 do
 		nGrowLevel = ReturnToPerfectChild(sceneId, selfId, petGUID_H, petGUID_L)
-		
-		if (i == 0) then
-			nCostMoneyJZ = nMoneyJZ - GetMoneyJZ(sceneId,selfId)
-			nCostMoneyJB = nMoneyJB - GetMoney(sceneId,selfId)
-		end
-
-		AddMoneyJZ(sceneId, selfId, nCostMoneyJZ)
-		AddMoney(sceneId, selfId, nCostMoneyJB)
-
 		if (nGrowLevel == 5) then
 			break
 		end
 	end
+	
+	LuaFnSendSpecificImpactToUnit(sceneId, selfId, selfId, selfId, 18, 0);
+
+	if (nGrowLevel >= 4) then
+		local strTbl = {"S½ C¤p","Xu¤t S¡c","Ki®t Xu¤t","Trác Vi®t","Toàn MÛ"};
+		local Msg = "#W#{_INFOUSR%s}#{HT14}#Y"..strTbl[nGrowLevel].."#{HT15} #{_INFOMSG%s}#{HT16}"
+		local szPetTrans = GetPetTransString ( sceneId, selfId, petGUID_H, petGUID_L )
+		local str = format( Msg, selfName, szPetTrans )
+		BroadMsgByChatPipe (sceneId, selfId, str, 4)
+	end
+
 	return  1
 end
 
-function GetOriginalMoney( sceneId, selfId)
-	local nMoneyJZ = GetMoneyJZ(sceneId,selfId)
-	local nMoneyJB = GetMoney(sceneId,selfId)
-	return nMoneyJZ + nMoneyJB
-end
 
 function ReturnToPerfectChild( sceneId, selfId, petGUID_H, petGUID_L)
 	-- ÕäÊŞ»¹Í¯
-	local ret, perLevel = LuaFnPetReturnToChild( sceneId, selfId, petGUID_H, petGUID_L, 1, -1)
+	local ret, perLevel = LuaFnPetReturnToChild( sceneId, selfId, petGUID_H, petGUID_L, 0, -1)
 	local nGrowLevel = 0;
 
 	if ret and ret == 1 then
-		local szMsg = "Trân thú Hoàn Ğ°ng thành công!";
-		x334908_NotifyTip( sceneId, selfId, szMsg );															-- ĞÑÄ¿ÌáÊ¾
-		LuaFnSendSpecificImpactToUnit(sceneId, selfId, selfId, selfId, 18, 0);		-- ÌØĞ§
-
-		local itemTblIndex = LuaFnGetItemIndexOfUsedItem( sceneId, selfId );			--by Vega 20080919
+		local itemTblIndex = LuaFnGetItemIndexOfUsedItem( sceneId, selfId );
 		if (itemTblIndex == 30503017 or itemTblIndex == 30503018 or itemTblIndex == 30503019 or itemTblIndex == 30503020 or itemTblIndex == 30503016) then
 			nGrowLevel = LuaFnGetPetGrowRateByGUID( sceneId, selfId, petGUID_H, petGUID_L )
-		end											--by Vega 20080919
+		end
 
 		local selfName = LuaFnGetName(sceneId, selfId);
 		local petTransfer = LuaFnGetPetTransferByGUID(sceneId, selfId, petGUID_H, petGUID_L);
-		if perLevel and perLevel >= 6 and selfName and petTransfer then
-			local strWorldChat = "#{_INFOUSR"..selfName.."}#H hoàn ğ°ng ğßşc #{_INFOMSG"..petTransfer.."}#H trên tr¶i ban xu¯ng!";
-			--BroadMsgByChatPipe(sceneId, selfId, strWorldChat, 4);
-		end
-
-		-- ³É³¤ÂÊTÕi ½Ü³ö(º¬)ÒÔÉÏÊ±²¥·ÅH® th¯ng¹«¸æ
-		-- add by WTT	20090116
-		if (nGrowLevel >= 4) then
-			local strTbl = {"S½ C¤p","Xu¤t S¡c","Ki®t Xu¤t","Trác Vi®t","Toàn MÛ"};
-			-- AAAºÜÏ²»¶Ğ¡¶¯Îï,½«ÕäÊŞ»¹Í¯ºó¾¹È»ÒâÍâtoÕ ğµ  ği¬mµ½ÁË³É³¤ÂÊÎªCCCtoÕ ğµ BBB£¡°®ĞÄtoÕ ğµ »Ø±¨¹ûÈ»·áºñ.
-			-- AAAÎªÍæ¼ÒÁ´½Ó  BBBÎª»¹Í¯ºóÕäÊŞtoÕ ğµ Á´½Ó	 CCCÎª³É³¤ÂÊ(½Ü³ö¼°ÒÔÉÏ).
-			local Msg = "#W#{_INFOUSR%s}#{HT14}#Y"..strTbl[nGrowLevel].."#{HT15} #{_INFOMSG%s}#{HT16}"
-			local szPetTrans = GetPetTransString ( sceneId, selfId, petGUID_H, petGUID_L )
-			local str = format( Msg, selfName, szPetTrans )
-
-			BroadMsgByChatPipe (sceneId, selfId, str, 4)
-		end
-
 	end
 	return nGrowLevel
 end
