@@ -1,0 +1,9 @@
+INT	STRING
+ID	ÃèÊö$1$
+1	Nguyên li®u ğúc
+2	Nguyên li®u n¤u nß¾ng
+3	V§t li®u chª dßşc
+4	Nguyên li®u may m£c
+5	V§t li®u công ngh®
+6	Ğä TÕo Ğ°
+7	Khác

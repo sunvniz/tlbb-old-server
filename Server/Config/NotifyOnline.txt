@@ -1,0 +1,9 @@
+INT	INT	INT	STRING
+index	isShow	mode	info$1$
+#<0>index	Ë÷Òý		
+#<1>isShow	ÊÇ·ñÏÔÊ¾		
+#<2>mode	·¢²¼Ä£Ê½£º0£¬ÆÕÍ¨Í¨¸æ£»1£¬ÐÇÆÚÍ¨¸æ¡¶NotifyWeek¡·£»2£¬ÈÕÆÚÍ¨¸æ¡¶NotifyDate¡·£»3£¬ÉúÈÕÍ¨¸æ£»4£¬µÇÂ¼Í¨¸æ£¨¸ñÊ½¹Ì¶¨£©		
+#<3>info	ÏûÏ¢ÄÚÈÝ		
+#			
+0	1	0	Chào m×ng các hÕ ðªn v¾i trò ch½i Thiên Long Bát Bµ.
+1	1	4	#WTh¶i gian mà l¥n trß¾c các hÕ ðång nh§p là #cff0000%d/%d/%d lúc %d gi¶#W. Ð¸a chï IP ðång nh§p là #cff0000%d.%d.%d.%d#W. 

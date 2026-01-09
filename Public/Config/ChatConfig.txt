@@ -1,0 +1,15 @@
+INT	STRING	STRING	INT	INT	INT	INT	INT	INT	INT	INT
+ID	ÆµµÀÃû³Æ$1$	Ç°µ¼×Ö·û$1$	·¢ËÍÊ±¼ä¼ä¸ô£¨ºÁÃë£©	"ÏûºÄÀàÐÍ1(MP:0,¾«Á¦1,»îÁ¦:2,²»ÐèÒª:-1)"	ÏûºÄÊýÖµ1	ÏûºÄÀàÐÍ2	ÏûºÄÊýÖµ2	ÏûºÄÀàÐÍ3	ÏûºÄÊýÖµ3	µÈ¼¶ÏÞÖÆ
+0	Kênh g¥n	Lân c§n	3000	-1	0	-1	0	-1	0	0
+1	Ðµi ngû	Ðµi ngû	1000	-1	0	-1	0	-1	0	0
+2	Thª gi¾i	Thª gi¾i	180000	1	2	2	2	-1	0	15
+3	Tin m§t	Nói th¥m	1000	-1	0	-1	0	-1	0	6
+4	H® th¯ng	#-09	15000	-1	0	-1	0	-1	0	0
+5	Tñ kiªn	Tñ kiªn	3000	-1	0	-1	0	-1	0	0
+6	Bang phái	Bang phái	500	-1	0	-1	0	-1	0	0
+7	Môn phái	Môn phái	3000	-1	0	-1	0	-1	0	0
+8	Tñ tÕo	Tñ dùng	3000	-1	0	-1	0	-1	0	0
+9	H² trþ	H² trþ	3000	-1	0	-1	0	-1	0	0
+10	LÕt bá t¥n ðÕo	LÕt bá	0	-1	0	-1	0	-1	0	0
+11	Ð°ng thành t¥n ðÕo	Tïnh	1000	-1	0	-1	0	-1	0	0
+12	 Ð°ng Minh	Ð°ng minh	1000	-1	0	-1	0	-1	0	0

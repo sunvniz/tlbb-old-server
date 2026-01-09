@@ -1,0 +1,43 @@
+INT	INT	INT	STRING
+index	classID£¨ºÍRecycleItemClass.txtÀïid¶ÔÓ¦£©	typeID£¨×Ô¼º¶¨£©	ÃèÊö$1$
+0	1	1	Khoáng thÕch
+1	1	2	ÐoÕn thÕch
+2	1	3	Ðúc
+3	2	1	LoÕi cá
+4	2	2	Lß½ng thñc
+5	2	3	LoÕi th¸t
+6	2	4	Ði«u li®u
+7	2	5	N¤u nß¾ng b± li®u
+8	3	1	Dßþc li®u
+9	3	2	Dßþc dçn
+10	3	3	Dßþc ph¦m b± li®u
+11	3	4	Dßþc ph¦m ph¯i li®u
+12	4	1	V§t li®u d®t
+13	4	2	Nh§n cách
+14	4	3	B¯ phiªn
+15	4	4	Nguyên li®u th¶i trang
+16	5	1	Khoáng thÕch
+17	5	2	Luy®n ng÷c
+18	6	1	Ðao Phü ðä tÕo ð°
+19	6	2	Thß½ng B±ng ðä tÕo ð°
+20	6	3	Ð½n Ðoän Ðä TÕo Ð°
+21	6	4	Song Ðoän Ðä TÕo Ð°
+22	6	5	Phiªn Ðä TÕo Ð°
+23	6	6	Hoàn Ðä TÕo Ð°
+24	6	7	MÕo TØ Ðä TÕo Ð°
+25	6	8	Y Phøc Ðä TÕo Ð°
+26	6	9	Hµ thü Ðä TÕo Ð°
+27	6	10	Hài Ðä TÕo Ð°
+28	6	11	HÕng liên ðä tÕo ð°
+29	6	12	Gi¾i chï ðä tÕo ð°
+30	6	13	Hµ phù ðä tÕo ð°
+31	6	14	Hµ Uy¬n Ðä TÕo Ð°
+32	6	15	Hµ Kiên Ðä TÕo Ð°
+33	6	16	Yêu ðái ðä tÕo ð°
+34	7	1	VÕn Linh ThÕch
+35	7	2	V§t li®u ðøc l²
+36	7	3	TÕp V§t
+37	2	6	Thñc Tài
+38	7	4	Yªn huy«n ng÷c
+39	7	5	T¥n hoàng châu
+40	7	6	Huy«n HÕo Ng÷c

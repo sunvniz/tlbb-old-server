@@ -1,0 +1,11 @@
+# 1. Ignore everything in the folder and subfolders
+*
+!*/
+
+# 2. Allow specific file extensions
+!*.txt
+!*.lua
+!*.ini
+
+# 3. Optional: Ensure the .gitignore itself is tracked
+!.gitignore
