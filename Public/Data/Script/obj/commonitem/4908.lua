@@ -108,13 +108,33 @@ function x334908_OnActivateOnce( sceneId, selfId )
 	petGUID_L = LuaFnGetLowSectionOfTargetPetGuid( sceneId, selfId )
 
 	local nGrowLevel = 0
+	
+	local nMoneyJZ = GetMoneyJZ(sceneId,selfId)
+	local nMoneyJB = GetMoney(sceneId,selfId)
+	local nCostMoneyJZ = 0
+	local nCostMoneyJB = 0
 	for i = 0, 99 do
 		nGrowLevel = ReturnToPerfectChild(sceneId, selfId, petGUID_H, petGUID_L)
+		
+		if (i == 0)
+			nCostMoneyJZ = nMoneyJZ - GetMoneyJZ(sceneId,selfId)
+			nCostMoneyJB = nMoneyJB - GetMoney(sceneId,selfId)
+		end
+
+		AddMoneyJZ(sceneId, selfId, nCostMoneyJZ)
+		AddMoney(sceneId, selfId, nCostMoneyJB)
+
 		if (nGrowLevel == 5) then
 			break
 		end
 	end
 	return  1
+end
+
+function GetOriginalMoney( sceneId, selfId)
+	local nMoneyJZ = GetMoneyJZ(sceneId,selfId)
+	local nMoneyJB = GetMoney(sceneId,selfId)
+	return nMoneyJZ + nMoneyJB
 end
 
 function ReturnToPerfectChild( sceneId, selfId, petGUID_H, petGUID_L)
