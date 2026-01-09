@@ -107,15 +107,27 @@ function x334908_OnActivateOnce( sceneId, selfId )
 	petGUID_H = LuaFnGetHighSectionOfTargetPetGuid( sceneId, selfId )
 	petGUID_L = LuaFnGetLowSectionOfTargetPetGuid( sceneId, selfId )
 
+	local nGrowLevel = 0
+	for i = 0, 99 do
+		nGrowLevel = ReturnToPerfectChild(sceneId, selfId, petGUID_H, petGUID_L)
+		if (nGrowLevel == 5) then
+			break
+		end
+	end
+	return  1
+end
+
+function ReturnToPerfectChild( sceneId, selfId, petGUID_H, petGUID_L)
 	-- ÕäÊÞ»¹Í¯
 	local ret, perLevel = LuaFnPetReturnToChild( sceneId, selfId, petGUID_H, petGUID_L, 1, -1)
+	local nGrowLevel = 0;
+
 	if ret and ret == 1 then
 		local szMsg = "Trân thú Hoàn Ð°ng thành công!";
 		x334908_NotifyTip( sceneId, selfId, szMsg );															-- ÐÑÄ¿ÌáÊ¾
 		LuaFnSendSpecificImpactToUnit(sceneId, selfId, selfId, selfId, 18, 0);		-- ÌØÐ§
 
 		local itemTblIndex = LuaFnGetItemIndexOfUsedItem( sceneId, selfId );			--by Vega 20080919
-		local nGrowLevel = 0;
 		if (itemTblIndex == 30503017 or itemTblIndex == 30503018 or itemTblIndex == 30503019 or itemTblIndex == 30503020 or itemTblIndex == 30503016) then
 			nGrowLevel = LuaFnGetPetGrowRateByGUID( sceneId, selfId, petGUID_H, petGUID_L )
 		end											--by Vega 20080919
@@ -141,7 +153,7 @@ function x334908_OnActivateOnce( sceneId, selfId )
 		end
 
 	end
-	return 1
+	return nGrowLevel
 end
 
 --**********************************
